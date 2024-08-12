@@ -1,5 +1,5 @@
-import { FingerPrintIcon, UserIcon } from '@heroicons/react/20/solid'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { FingerPrintIcon, UserIcon } from '@heroicons/react/20/solid'
 
 const tabs = [
     { name: 'Mi Cuenta', href: '/profile', icon: UserIcon },

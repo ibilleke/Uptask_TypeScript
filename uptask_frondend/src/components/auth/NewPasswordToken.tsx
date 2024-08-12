@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
-//import { PinInput, PinInputField } from '@chakra-ui/pin-input';
+import { PinInput, PinInputField } from '@chakra-ui/pin-input';
 import { useMutation } from '@tanstack/react-query';
 import { ConfirmToken, NewPasswordTokenProps } from '@/types/index';
 import { validateToken } from '@/api/AuthAPI';
 import { toast } from 'react-toastify';
 
 export default function NewPasswordToken({token, setToken, setIsValidToken} : NewPasswordTokenProps) {
-    console.log(token)
     const { mutate } = useMutation({
         mutationFn: validateToken,
         onError: (error) => {
@@ -17,13 +16,8 @@ export default function NewPasswordToken({token, setToken, setIsValidToken} : Ne
             setIsValidToken(true)
         }
     })
-
-    const handleChange = (token: ConfirmToken["token"]) => {
-        setToken(token)
-    }
-    console.log(handleChange)
+    const handleChange = (token: ConfirmToken["token"]) => setToken(token)
     const handleComplete = (token: ConfirmToken["token"]) => mutate({token})
-    console.log(handleComplete)
     return (
         <>
             <form
@@ -33,14 +27,14 @@ export default function NewPasswordToken({token, setToken, setIsValidToken} : Ne
                     className="font-normal text-2xl text-center block"
                 >Código de 6 dígitos</label>
                 <div className="flex justify-center gap-5">
-                    {/* <PinInput value={"token"} onChange={handleChange} onComplete={handleComplete}>
+                    <PinInput value={token} onChange={handleChange} onComplete={handleComplete}>
                         <PinInputField className="h-10 w-10 p-3 rounded-lg border-gray-300 border placeholder-white" />
                         <PinInputField className="h-10 w-10 p-3 rounded-lg border-gray-300 border placeholder-white" />
                         <PinInputField className="h-10 w-10 p-3 rounded-lg border-gray-300 border placeholder-white" />
                         <PinInputField className="h-10 w-10 p-3 rounded-lg border-gray-300 border placeholder-white" />
                         <PinInputField className="h-10 w-10 p-3 rounded-lg border-gray-300 border placeholder-white" />
                         <PinInputField className="h-10 w-10 p-3 rounded-lg border-gray-300 border placeholder-white" />
-                    </PinInput> */}
+                    </PinInput>
                 </div>
             </form>
             <nav className="mt-10 flex flex-col space-y-4">

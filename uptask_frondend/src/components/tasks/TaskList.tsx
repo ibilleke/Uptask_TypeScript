@@ -2,11 +2,11 @@ import { useParams } from "react-router-dom"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { DndContext, DragEndEvent } from "@dnd-kit/core"
 import { toast } from "react-toastify"
-import TaskCard from "./TaskCard"
 import { statusTranslations } from "@/locales/es"
 import DropTask from "./DropTask"
 import { updateStatus } from "@/api/TaskAPI"
 import { GroupedTasks, Project, TaskListProps, TaskStatus } from "@/types/index"
+import TaskCard from "./TaskCard"
 
 const initialStatusGroups: GroupedTasks = {
     pending: [],

@@ -3,8 +3,8 @@ import { Menu, Transition } from '@headlessui/react'
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid'
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { useQuery} from "@tanstack/react-query"
-import { getProject } from "@/api/ProjectAPI"
 import { useAuth } from '@/hooks/useAuth'
+import { getProject } from "@/api/ProjectAPI"
 import { isManager } from '@/utils/polices'
 import DeleteProjectModal from '@/components/projects/DeleteProjectModal'
 

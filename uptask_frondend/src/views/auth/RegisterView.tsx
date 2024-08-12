@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
-import { UserRegistrationForm } from "@/types/index";
-import { useMutation } from "@tanstack/react-query";
-import ErrorMessage from "@/components/ErrorMessage";
 import { Link } from "react-router-dom";
-import { createAccount } from "@/api/AuthAPI";
+import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
+import { createAccount } from "@/api/AuthAPI";
+import ErrorMessage from "@/components/ErrorMessage";
+import { UserRegistrationForm } from "@/types/index";
 
 export default function RegisterView() {
   const initialValues: UserRegistrationForm = {

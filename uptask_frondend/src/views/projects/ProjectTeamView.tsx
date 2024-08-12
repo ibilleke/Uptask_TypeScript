@@ -3,9 +3,9 @@ import { Menu, Transition } from "@headlessui/react"
 import { EllipsisVerticalIcon } from "@heroicons/react/20/solid"
 import { Link, Navigate, useNavigate, useParams } from "react-router-dom"
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
+import { toast } from "react-toastify"
 import AddMemberModal from "@/components/team/AddMemberModal"
 import { getProjectTeam, removeUserFromProject } from "@/api/TeamAPI"
-import { toast } from "react-toastify"
 
 export default function ProjectTeamView() {
     const navigate = useNavigate()

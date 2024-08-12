@@ -3,10 +3,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Menu, Transition } from "@headlessui/react";
 import { EllipsisVerticalIcon } from "@heroicons/react/20/solid";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useDraggable } from "@dnd-kit/core";
 import { toast } from "react-toastify";
 import { TaskCardProps } from "@/types/index";
 import { deleteTask } from "@/api/TaskAPI";
-import { useDraggable } from "@dnd-kit/core";
 
 export default function TaskCard({task, canEdit}: TaskCardProps) {
   const {attributes, listeners, setNodeRef, transform} = useDraggable({

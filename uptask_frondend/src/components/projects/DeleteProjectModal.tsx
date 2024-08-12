@@ -2,11 +2,11 @@ import { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useForm } from "react-hook-form";
+import { toast } from 'react-toastify';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import ErrorMessage from "../ErrorMessage";
 import { CheckPasswordForm } from '@/types/index';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { checkPassword } from '@/api/AuthAPI';
-import { toast } from 'react-toastify';
 import { deleteProject } from '@/api/ProjectAPI';
 
 export default function DeleteProjectModal() {
