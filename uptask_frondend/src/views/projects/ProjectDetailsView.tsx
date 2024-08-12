@@ -1,13 +1,13 @@
+import { useMemo } from "react"
 import { Link, Navigate, useNavigate, useParams } from "react-router-dom"
 import { useQuery } from "@tanstack/react-query"
-import { getFullProject } from "@/api/ProjectAPI"
+import { useAuth } from "@/hooks/useAuth"
 import AddTaskModal from "@/components/tasks/AddTaskModal"
 import TaskList from "@/components/tasks/TaskList"
 import EditTaskData from "@/components/tasks/EditTaskData"
 import TaskModalDetails from "@/components/tasks/TaskModalDetails"
-import { useAuth } from "@/hooks/useAuth"
 import { isManager } from "@/utils/polices"
-import { useMemo } from "react"
+import { getFullProject } from "@/api/ProjectAPI"
 
 export default function ProjectDetailsView() {
     const {data: user ,isLoading: authLoading} = useAuth()

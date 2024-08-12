@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
+import SearchResult from "./SearchResult";
 import ErrorMessage from "../ErrorMessage";
 import { TeamMemberForm } from "@/types/index";
 import { findUserByEmail } from "@/api/TeamAPI";
-import SearchResult from "./SearchResult";
 
 export default function AddMemberForm() {
     const initialValues: TeamMemberForm = {

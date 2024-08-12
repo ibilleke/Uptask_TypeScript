@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form"
+import { useMutation, useQueryClient } from "@tanstack/react-query"
+import { toast } from "react-toastify"
+import { updateProfile } from "@/api/ProfileAPI"
 import ErrorMessage from "../ErrorMessage"
 import { ProfileFormProps, UserProfileForm } from "@/types/index"
-import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { updateProfile } from "@/api/ProfileAPI"
-import { toast } from "react-toastify"
 
 export default function ProfileForm({ data }: ProfileFormProps) {
     const { register, handleSubmit, formState: { errors } } = useForm<UserProfileForm>({ defaultValues: data })

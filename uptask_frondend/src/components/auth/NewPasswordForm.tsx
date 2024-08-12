@@ -1,10 +1,10 @@
-import type { NewPasswordForm, NewPasswordFormProps } from "../../types";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import ErrorMessage from "@/components/ErrorMessage";
-import { useMutation } from "@tanstack/react-query";
-import { updatePasswordWithToken } from "@/api/AuthAPI";
 import { toast } from "react-toastify";
+import { useMutation } from "@tanstack/react-query";
+import ErrorMessage from "@/components/ErrorMessage";
+import { updatePasswordWithToken } from "@/api/AuthAPI";
+import type { NewPasswordForm, NewPasswordFormProps } from "../../types";
 
 export default function NewPasswordForm({token}: NewPasswordFormProps) {
     const navigate = useNavigate()
